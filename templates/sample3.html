@@ -1,0 +1,15 @@
+{% load cache %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Durgasoftware solutions</h1>
+    {% cache 40 addr %}
+    <h1>Hyderabad</h1>
+
+    {% endcache addr %}
+</body>
+</html>

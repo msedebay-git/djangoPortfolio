@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Profile page</h1>
+    <h2>Welcome {{ name }}</h2>
+
+        <form method="post" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+            {{ fm.label_tag }}{{ fm }}{{ fm.errors | striptags }}<br><br>
+        {% endfor %}
+        <input type="submit" value="update">
+    </form>
+
+      {% if messages %}
+        {% for message in messages %}
+            <h3>{{ message }}</h3>
+        {% endfor %}
+    {% endif %}
+
+    <a href="{% url 'logout' %}">Click here to logout</a><br>
+    <a href="{% url 'changepassword' %}">ChangePassword With OldPassword</a><br>
+    <a href="{% url 'changepassword1' %}">ChangePassword Without OldPassword</a><br>
+</body>
+</html>

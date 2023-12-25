@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{#{% extends 'base.html' %}#}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+
+{% if names %}
+{% for name in names %}
+    <h1>{{ name }}</h1>
+{% endfor %}
+    {% else %}
+    <h1>No Details</h1>
+
+{% endif %}
+
+{% endblock %}
+
+{#{% for name in names %}#}
+{#    <h1>{{ name }}</h1>#}
+{##}
+{#{% endfor %}#}
+{##}
+{#{% if name and age %}#}
+{#<h1>Name is: {{ name }} age {{ age }}</h1>#}
+{#    {% else %}#}
+{#<h1>No Details</h1>#}
+{##}
+{#{% endif %}#}
+
+</body>
+</html>
